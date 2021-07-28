@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Noto+Sans+JP:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+$backgroundColor-1: #1A1A2E;
+$backgroundColor-2: #16213E;
+$font-color-1: #e7e7e7;
+
+
+body {
+    // font-family: 'Cinzel', serif;
+    // font-family: 'Noto Sans JP', sans-serif;
+    // display: flex;
+    // flex-direction: column;
+    // align-items: center;
+    // justify-content: center;
+    // height: 100vh;
+    // overflow: hidden;
+    background-color: $backgroundColor-1;
+}
+
+.wrapper-container {
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+header {
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $backgroundColor-2;
+
+}
+
+.app-title {
+    font-size: 3rem;
+    color: $font-color-1;
+    display: flex;
+
+    p {
+        font-family: 'Cinzel', serif;
+        font-weight: 500;
+    }
+
+    .fas {
+        font-size: 4rem;
+        color: $font-color-1;
+        padding-left: 1.5rem;
+    }
+}
+
+.search {
+    width: 20rem;
+    height: 2.5rem;
+    background-color: transparent;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+    color: $font-color-1;
+    font-size: 1rem;
+    font-family: 'Noto Sans JP', sans-serif;
+    padding-left: 1rem;
+    border: 0.1rem solid #fff;
+
+    &::-webkit-input-placeholder {
+        color: $font-color-1;
+    }
+
+    &::-moz-placeholder {
+        color: $font-color-1;
+    }
+
+    &:-ms-input-placeholder {
+        color: $font-color-1;
+    }
+
+    &::-ms-input-placeholder {
+        color: $font-color-1;
+    }
+
+    &::placeholder {
+        color: $font-color-1;
+    }
+
+    &:focus {
+        outline: none;
+        background-color: $backgroundColor-1;
+    }
+}
+
+
+//MAIN SECTION 
+
+
+main {
+    font-family: 'Noto Sans JP', sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.movie {
+    width: 300px;
+    margin: .5rem;
+    background-color: $backgroundColor-2;
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.5);
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+
+    img {
+        width: 100%;
+    }
+
+}
+
+.movie__info {
+    padding: 1rem 1rem 1rem;
+    color: $font-color-1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    letter-spacing: .1rem;
+}
+
+.rating-color {
+    font-size: 1.5rem;
+}
+
+.rating-color.green {
+    color: greenyellow;
+}
+
+.rating-color.orange {
+    color: orange;
+}
+
+.rating-color.red {
+    color: red;
+}
+
+.movie__overview {
+    background-color: $font-color-1;
+    padding: 2rem;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    max-height: 100%;
+    transform: translateY(120%);
+    -webkit-transform: translateY(120%);
+    -moz-transform: translateY(120%);
+    -ms-transform: translateY(120%);
+    -o-transform: translateY(120%);
+    transition: transform 0.4s ease-in-out;
+    -webkit-transition: transform 0.4s ease-in-out;
+    -moz-transition: transform 0.4s ease-in-out;
+    -ms-transition: transform 0.4s ease-in-out;
+    -o-transition: transform 0.4s ease-in-out;
+}
+
+
+.movie:hover .movie__overview {
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+}
