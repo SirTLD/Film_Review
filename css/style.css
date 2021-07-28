@@ -17,7 +17,10 @@ body {
 }
 
 header {
-  padding: 2rem;
+  padding-left: 4rem;
+  padding-right: 3rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -31,11 +34,14 @@ header {
 }
 
 .app-title {
-  font-size: 3rem;
+  font-size: 2rem;
   color: #e7e7e7;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .app-title p {
@@ -44,7 +50,7 @@ header {
 }
 
 .app-title .fas {
-  font-size: 4rem;
+  font-size: 3rem;
   color: #e7e7e7;
   padding-left: 1.5rem;
 }
@@ -93,11 +99,18 @@ main {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  padding-top: 4rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .movie {
   width: 300px;
-  margin: .5rem;
+  margin: 1rem;
   background-color: #16213E;
   -webkit-box-shadow: 0 4px 5px rgba(0, 0, 0, 0.5);
           box-shadow: 0 4px 5px rgba(0, 0, 0, 0.5);
@@ -115,7 +128,10 @@ main {
 }
 
 .movie__info {
-  padding: 1rem 1rem 1rem;
+  padding-top: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
   color: #e7e7e7;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -127,6 +143,13 @@ main {
       -ms-flex-align: center;
           align-items: center;
   letter-spacing: .1rem;
+}
+
+.movie__info h3 {
+  padding-bottom: .5rem;
+  font-size: .9rem;
+  font-weight: 100;
+  width: 70%;
 }
 
 .rating-color {
