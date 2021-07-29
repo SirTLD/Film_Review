@@ -1,10 +1,10 @@
 const API_URL =
   'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=b7e8f5b51945e5e96372a885db3436fc&page=1';
 
-const IMG_PATH = 'https://image.tmdb.org/t/p/w500';
+const IMG_PATH = 'https://image.tmdb.org/t/p/w1280';
 
 const SEARCH_API =
-  'https://api.themoviedb.org/3/discover/movie?api_key=b7e8f5b51945e5e96372a885db3436fc&page=1&query=" ';
+  'https://api.themoviedb.org/3/search/movie?api_key=b7e8f5b51945e5e96372a885db3436fc&query=" ';
 
 getMovies(API_URL);
 
@@ -32,7 +32,11 @@ function showResults(movies) {
       <img src="${IMG_PATH + poster_path}" alt="">
       <div class="movie__info">
           <h3>${title}</h3>
-          <i class="rating-color fas fa-thumbs-up"></i>
+          
+          <i class="rating-color ${ratingColor(
+            vote_average
+          )} fas fa-thumbs-${toggleRate(vote_average)}"></i>
+               
       </div>
       <div class="movie__overview">
           <h3>Overview</h3>
@@ -44,24 +48,44 @@ function showResults(movies) {
   });
 }
 
-// function toggleRate(vote) {
-//   vote >= 8 ? 'green' : vote >= 5 ? 'orange' : 'red';
-// }
+function toggleRate(vote) {
+  if (vote >= 8) {
+    return 'up';
+  }
+  if (vote >= 5) {
+    return 'up';
+  } else {
+    return 'down';
+  }
+}
 
-//FORM INFORMATION
+function ratingColor(voteTally) {
+  if (voteTally >= 8) {
+    return 'green';
+  }
+  if (voteTally >= 5) {
+    return 'orange';
+  }
+  if (vote < 5) {
+    return 'red';
+  }
+}
+
+//GETTING FORM QUERYS
 
 const form = document.getElementById('form');
 
-//SEARCH LOCATION
+const search = document.getElementById('search');
 
-const searchValue = document.getElementById('search');
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
 
-form.addEventListener('submit', (submitQuery) => {
-  submitQuery.preventDefault();
+  const searchTerm = search.value;
 
-  const searchInfo = search.value;
-
-  searchValue && searchInfo !== ''
-    ? getMovies(SEARCH_API + searchValue)
-    : window.location.reload();
+  if (searchTerm && searchTerm !== '') {
+    getMovies(SEARCH_API + searchTerm);
+    search.value = '';
+  } else {
+    window.location.reload();
+  }
 });
