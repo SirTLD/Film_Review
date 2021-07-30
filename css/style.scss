@@ -12,7 +12,10 @@ $backgroundColor-2: #16213E;
 $font-color-1: #e7e7e7;
 
 
-$font-color-2: blue;
+$font-color-2: rgb(201, 201, 201);
+
+$font-color-3: rgb(255, 0, 0);
+$font-color-4: rgb(180, 168, 133);
 
 
 body {
@@ -54,9 +57,9 @@ header {
     }
 }
 
-.search {
-    width: 20rem;
-    height: 2.5rem;
+.search-field {
+    width: 18rem;
+    height: 3rem;
     background-color: transparent;
     border-radius: 1rem;
     -webkit-border-radius: 1rem;
@@ -66,8 +69,9 @@ header {
     color: $font-color-1;
     font-size: 1rem;
     font-family: 'Noto Sans JP', sans-serif;
-    padding-left: 1rem;
-    border: 0.1rem solid #fff;
+    padding-left: 1.5rem;
+    border: 0.01rem solid #fff;
+    
 
     &::-webkit-input-placeholder {
         color: $font-color-1;
@@ -183,8 +187,7 @@ main {
     -moz-transition: transform 0.4s ease-in-out;
     -ms-transition: transform 0.4s ease-in-out;
     -o-transition: transform 0.4s ease-in-out;
-    font-size: .9rem;
-    
+    font-size: .9rem;    
 
     h3 {
         color: red;
@@ -193,7 +196,6 @@ main {
     }
 }
 
-
 .movie:hover .movie__overview {
     transform: translateY(0);
     -webkit-transform: translateY(0);
@@ -201,3 +203,39 @@ main {
     -ms-transform: translateY(0);
     -o-transform: translateY(0);
 }
+
+
+
+// MEDIA QUERIES
+
+
+@media screen and (max-width: 600px) {
+
+    header {
+        flex-direction: column;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    
+    
+.app-title {
+
+    padding-bottom: 2rem;
+
+    font-size: 1.3rem;
+      .fas {
+        font-size: 2rem;
+        color: $font-color-1;
+        padding-left: 1rem;
+    }
+}
+
+.search-field {
+    width: 16rem;
+    height: 2.5rem;
+   
+   }
+
+}
+

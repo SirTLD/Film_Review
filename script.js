@@ -4,7 +4,7 @@ const API_URL =
 const IMG_PATH = 'https://image.tmdb.org/t/p/w1280';
 
 const SEARCH_API =
-  'https://api.themoviedb.org/3/search/movie?api_key=b7e8f5b51945e5e96372a885db3436fc&query=" ';
+  'https://api.themoviedb.org/3/search/movie?api_key=b7e8f5b51945e5e96372a885db3436fc&query=';
 
 getMovies(API_URL);
 
@@ -48,6 +48,19 @@ function showResults(movies) {
   });
 }
 
+// formElement.addEventListener('submit', (e) => {
+//   e.preventDefault();
+
+//   const searchTerm = search.value;
+
+//   if (searchTerm && searchTerm !== '') {
+//     getMovies(SEARCH_API + searchTerm);
+//     search.value = '';
+//   } else {
+//     window.location.reload();
+//   }
+// });
+
 function toggleRate(vote) {
   if (vote >= 8) {
     return 'up';
@@ -66,21 +79,21 @@ function ratingColor(voteTally) {
   if (voteTally >= 5) {
     return 'orange';
   }
-  if (vote < 5) {
+  if (voteTally < 5) {
     return 'red';
   }
 }
 
 //GETTING FORM QUERYS
 
-const form = document.getElementById('form');
+let formElement = document.getElementById('search');
 
-const search = document.getElementById('search');
-
-form.addEventListener('submit', (e) => {
+formElement.addEventListener('submit', (e) => {
   e.preventDefault();
 
-  const searchTerm = search.value;
+  let search = document.querySelector('.search-field');
+
+  let searchTerm = search.value;
 
   if (searchTerm && searchTerm !== '') {
     getMovies(SEARCH_API + searchTerm);
