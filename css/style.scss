@@ -210,10 +210,7 @@ main {
     -o-transform: translateY(0);
 }
 
-
-
 // MEDIA QUERIES
-
 
 @media screen and (max-width: 600px) {
 
@@ -223,15 +220,13 @@ main {
         padding-right: 1rem;
         justify-content: center;
         align-items: center;
-    }
-
-    
+       
+    }    
     
 .app-title {
-
     padding-bottom: 1.5rem;
 
-    font-size: 1.3rem;
+    font-size: 1.6rem;
       .fas {
         font-size: 2rem;
         color: $font-color-1;
@@ -239,11 +234,13 @@ main {
     }
 }
 
-.search-field {
-    width: calc(100vw - 10%);
-    height: 2.5rem;
-   
-   }
 
+
+.search-field {
+    justify-self: center;
+    align-self: center;
+    width: 80vw;
+    height: 2.5rem;   
+   }
 }
 
