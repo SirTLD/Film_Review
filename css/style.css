@@ -55,6 +55,10 @@ header {
   padding-left: 1.5rem;
 }
 
+.app-title {
+  cursor: pointer;
+}
+
 .search-field {
   width: 18rem;
   height: 3rem;
@@ -69,6 +73,7 @@ header {
   font-family: 'Noto Sans JP', sans-serif;
   padding-left: 1.5rem;
   border: 0.01rem solid #fff;
+  cursor: pointer;
 }
 
 .search-field::-webkit-input-placeholder {
@@ -215,9 +220,15 @@ main {
             flex-direction: column;
     padding-left: 1rem;
     padding-right: 1rem;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   .app-title {
-    padding-bottom: 2rem;
+    padding-bottom: 1.5rem;
     font-size: 1.3rem;
   }
   .app-title .fas {
@@ -226,7 +237,7 @@ main {
     padding-left: 1rem;
   }
   .search-field {
-    width: 16rem;
+    width: calc(100vw - 10%);
     height: 2.5rem;
   }
 }
