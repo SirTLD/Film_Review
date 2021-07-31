@@ -29,7 +29,7 @@ function showResults(movies) {
 
     movieDiv.innerHTML = `           
      
-      <img src="${IMG_PATH + poster_path}" alt="">
+      <img src="${defaultImage(poster_path)}" alt="">
       <div class="movie__info">
           <h3>${title}</h3>
           
@@ -46,6 +46,14 @@ function showResults(movies) {
 
     main.appendChild(movieDiv);
   });
+}
+
+function defaultImage(posterPath) {
+  if (posterPath == null) {
+    return 'https://upload.wikimedia.org/wikipedia/commons/6/64/Poster_not_available.jpg';
+  } else {
+    return IMG_PATH + posterPath;
+  }
 }
 
 function toggleRate(vote) {
