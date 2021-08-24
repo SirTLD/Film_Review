@@ -1,3 +1,3 @@
-# Film_Review
+# Film Judge
 
-An app I designed and built using API, flexbox and Javascript
+A responsive app I designed and built using API, flexbox and Javascript
