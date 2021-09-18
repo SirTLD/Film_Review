@@ -48,6 +48,8 @@ function showResults(movies) {
   });
 }
 
+//SOLVE MISSING IMAGE ISSUE
+
 function defaultImage(posterPath) {
   if (posterPath == null) {
     return 'https://upload.wikimedia.org/wikipedia/commons/6/64/Poster_not_available.jpg';
